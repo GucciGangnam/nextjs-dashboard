@@ -30,6 +30,7 @@ export default async function Page() {
                 <Suspense fallback={<LatestInvoicesSkeleton />}>
                     <LatestInvoices />
                 </Suspense>
+                Hello world { new Date().toLocaleTimeString() }
             </div>
         </main>
     );
