@@ -7,6 +7,7 @@ import { RevenueChartSkeleton } from '@/app/ui/skeletons';
 import { LatestInvoicesSkeleton } from '@/app/ui/skeletons';
 import { CardsSkeleton } from '@/app/ui/skeletons';
 import CardWrapper from '@/app/ui/dashboard/cards';
+import CurrentTime  from '@/app/ui/dashboard/current-time'
 
 export default async function Page() {
 
@@ -30,7 +31,11 @@ export default async function Page() {
                 <Suspense fallback={<LatestInvoicesSkeleton />}>
                     <LatestInvoices />
                 </Suspense>
-                Hello world { new Date().toLocaleTimeString() }
+
+                {/* <Suspense fallback={<CurrentTimeSkeleton />}> */}
+                    <CurrentTime />
+                {/* </Suspense> */}
+
             </div>
         </main>
     );
