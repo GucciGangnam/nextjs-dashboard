@@ -1,9 +1,9 @@
 
-import { fetchCurrentTime2 } from "@/app/lib/data"
+import { fetchCurrentTime } from "@/app/lib/data"
 
 export default async function CurrentTime() {
 
-const time = await fetchCurrentTime2();
+const time = await fetchCurrentTime();
 const timeStr =  time?.toLocaleTimeString();
 
 console.log(timeStr)

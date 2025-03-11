@@ -8,11 +8,12 @@ import {
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
-import { unstable_noStore } from 'next/cache';
+import { connection } from 'next/server'
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
 export async function fetchCurrentTime() { 
+  await connection()
   try{ 
     const currentTime = new Date();
     return currentTime;
@@ -21,16 +22,6 @@ export async function fetchCurrentTime() {
   }
 }
 
-export async function fetchCurrentTime2() { 
-  unstable_noStore();
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-  try{ 
-    const currentTime = new Date();
-    return currentTime;
-  }catch(err){ 
-    console.error(err)
-  }
-}
 
 export async function fetchRevenue() {
   try {
