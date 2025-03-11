@@ -23,6 +23,7 @@ export async function fetchCurrentTime() {
 
 export async function fetchCurrentTime2() { 
   unstable_noStore();
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   try{ 
     const currentTime = new Date();
     return currentTime;
