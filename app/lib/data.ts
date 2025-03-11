@@ -11,7 +11,7 @@ import { formatCurrency } from './utils';
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
-export async function updatedTime() { 
+export async function fetchCurrentTime() { 
   try{ 
     const currentTime = new Date();
     return currentTime;

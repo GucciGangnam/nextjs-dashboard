@@ -4,10 +4,16 @@ import { useEffect, useState } from "react"
 
 
 export default function CurrentTime() {
-    const [currentTime, setCurrentTime] = useState<Date | null>(null);
 
+
+
+
+
+    const [currentTime, setCurrentTime] = useState<Date | null>(null);
     useEffect(() => {
-        setCurrentTime(new Date());
+        setTimeout(() => { 
+            setCurrentTime(new Date());
+        }, 3000)
     }, [])
 
     return (

@@ -32,9 +32,9 @@ export default async function Page() {
                     <LatestInvoices />
                 </Suspense>
 
-                {/* <Suspense fallback={<CurrentTimeSkeleton />}> */}
+                <Suspense fallback={<h1> Loading time </h1>}>
                     <CurrentTime />
-                {/* </Suspense> */}
+                </Suspense>
 
             </div>
         </main>
