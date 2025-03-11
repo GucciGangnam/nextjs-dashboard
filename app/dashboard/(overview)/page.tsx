@@ -8,10 +8,14 @@ import { LatestInvoicesSkeleton } from '@/app/ui/skeletons';
 import { CardsSkeleton } from '@/app/ui/skeletons';
 import CardWrapper from '@/app/ui/dashboard/cards';
 import CurrentTime  from '@/app/ui/dashboard/current-time'
+// import { fetchRevenue } from '@/app/lib/data';
 
 export default async function Page() {
 
     // Fetch Data 
+    // const revenue = await fetchRevenue();
+
+
     return (
         <main>
             <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>

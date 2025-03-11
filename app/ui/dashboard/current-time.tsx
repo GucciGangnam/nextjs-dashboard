@@ -1,22 +1,14 @@
-'use client'
 
-import { useEffect, useState } from "react"
+import { fetchCurrentTime } from "@/app/lib/data"
 
+export default async function CurrentTime() {
 
-export default function CurrentTime() {
+const time = await fetchCurrentTime();
+const timeStr =  time?.toLocaleTimeString();
 
-
-
-
-
-    const [currentTime, setCurrentTime] = useState<Date | null>(null);
-    useEffect(() => {
-        setTimeout(() => { 
-            setCurrentTime(new Date());
-        }, 3000)
-    }, [])
+console.log(timeStr)
 
     return (
-        <h1 className="col-span-2"> This componet was rendered at: {currentTime?.toLocaleString()}</h1>
+        <h1 className="col-span-2"> This componet was rendered at: {timeStr} </h1>
     )
 }

@@ -8,10 +8,21 @@ import {
   Revenue,
 } from './definitions';
 import { formatCurrency } from './utils';
+import { unstable_noStore } from 'next/cache';
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
 export async function fetchCurrentTime() { 
+  try{ 
+    const currentTime = new Date();
+    return currentTime;
+  }catch(err){ 
+    console.error(err)
+  }
+}
+
+export async function fetchCurrentTime2() { 
+  unstable_noStore();
   try{ 
     const currentTime = new Date();
     return currentTime;
