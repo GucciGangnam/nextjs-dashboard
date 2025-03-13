@@ -7,7 +7,6 @@ import { RevenueChartSkeleton } from '@/app/ui/skeletons';
 import { LatestInvoicesSkeleton } from '@/app/ui/skeletons';
 import { CardsSkeleton } from '@/app/ui/skeletons';
 import CardWrapper from '@/app/ui/dashboard/cards';
-import CurrentTime  from '@/app/ui/dashboard/current-time'
 // import { fetchRevenue } from '@/app/lib/data';
 
 export default async function Page() {
@@ -34,10 +33,6 @@ export default async function Page() {
                 {/* Suspense for latest invoice comp */}
                 <Suspense fallback={<LatestInvoicesSkeleton />}>
                     <LatestInvoices />
-                </Suspense>
-
-                <Suspense fallback={<h1> Loading time </h1>}>
-                    <CurrentTime />
                 </Suspense>
 
             </div>
